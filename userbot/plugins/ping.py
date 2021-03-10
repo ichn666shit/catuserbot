@@ -2,13 +2,13 @@ import asyncio
 from datetime import datetime
 
 
-@bot.on(admin_cmd(pattern="ping$"))
-@bot.on(sudo_cmd(pattern="ping$", allow_sudo=True))
+@bot.on(admin_cmd(pattern="kon$"))
+@bot.on(sudo_cmd(pattern="kon$", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
         return
     start = datetime.now()
-    event = await edit_or_reply(event, "Pong!")
+    event = await edit_or_reply(event, "TOL!")
     end = datetime.now()
     ms = (end - start).microseconds / 1000
     await event.edit("Pong!\n`{}`".format(ms))
@@ -65,8 +65,8 @@ async def _(event):
 
 CMD_HELP.update(
     {
-        "ping": "**Plugin :** `ping`\
-    \n\n  •  **Syntax :** `.ping`\
+        "ping": "**Plugin :** `kon`\
+    \n\n  •  **Syntax :** `.kon`\
     \n  •  **Function : **__Shows you the ping speed of server__\
     \n\n  •  **Syntax : **`.fping`\
     \n  •  **Function : **__Shows the server ping with extra animation__\
